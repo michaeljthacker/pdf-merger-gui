@@ -2,7 +2,7 @@
 
 ## Clean previous builds (optional but recommended)
 ```bash
-rm -rf build dist main.spec
+Remove-Item -Recurse -Force build, dist, main.spec
 ```
 
 This command will differ for non-Windows.
