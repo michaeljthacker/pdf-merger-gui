@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import filedialog, messagebox
-from pypdf import PdfMerger
+from pypdf import PdfWriter, PdfReader
 
 def select_files():
     files = filedialog.askopenfilenames(
@@ -27,11 +27,13 @@ def merge_pdfs():
         return
 
     try:
-        merger = PdfMerger()
+        writer = PdfWriter()
         for pdf in files:
-            merger.append(pdf)
-        merger.write(output_path)
-        merger.close()
+            reader = PdfReader(pdf)
+            for page in reader.pages:
+                writer.add_page(page)
+        with open(output_path, "wb") as output_file:
+            writer.write(output_file)
         messagebox.showinfo("Success", f"Merged PDF saved to:\n{output_path}")
     except Exception as e:
         messagebox.showerror("Error", str(e))
