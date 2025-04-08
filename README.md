@@ -24,7 +24,7 @@ python src/main.py
 
 ## 🛠️ Build It Yourself (Optional)
 
-See `build_instructions.md`.
+See `buildinstructions.md`.
 
 ## License
 
