@@ -8,7 +8,7 @@ rm -rf build dist main.spec
 This command will differ for non-Windows.
 
 ## Installing dependencies
-Install PyInstaller:
+Install PyInstaller and PyPDF.
 
 ```bash
 pip install -r dev-requirements.txt
